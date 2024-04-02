@@ -1,5 +1,5 @@
-import { memo, PropsWithChildren, Suspense } from 'react';
-import { Box, Stack, Typography } from '@mui/joy';
+import { memo, PropsWithChildren } from 'react';
+import { Stack, Typography } from '@mui/joy';
 import Link from 'next/link';
 
 
@@ -30,13 +30,19 @@ const StyledLink = memo((props: StyledLinkProps) => {
 
 export const Wrapper = (props: PropsWithChildren) => {
   return <>
-    <Stack width='100vw' height='100vh'>
-      <Stack height='100%' overflow='auto'>
+    <Stack
+      id="page-root"
+      sx={{
+        width: '100dvw',
+        height: '100dvh',
+      }}
+    >
+      <Stack height="100%" overflow="auto">
         {props.children}
       </Stack>
-      <Stack direction='row'>
+      <Stack direction="row">
         <Stack
-          direction='column'
+          direction="column"
           pb={2}
           pt={1}
         >

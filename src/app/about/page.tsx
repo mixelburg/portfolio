@@ -6,7 +6,7 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 const Page = () => {
 
   return <>
-    <Stack p={2} alignItems="center" width="100vw" height="100vh" pt="20vh">
+    <Stack p={2} alignItems="center" width="100dvw" height="100dvh" pt="20vh">
       <Stack spacing={2}>
         <Typography level="h1" component="div">
           Hi, my name is <Typography sx={{ color: 'primary.300' }}>Ivan Kroha</Typography>
@@ -38,7 +38,7 @@ const Page = () => {
 
       </Stack>
     </Stack>
-  </>
-}
+  </>;
+};
 
 export default Page;
