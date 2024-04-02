@@ -7,6 +7,7 @@ EXPOSE 4444
 RUN apt update
 RUN apt install git -y
 RUN apt install curl unzip -y
+RUN apt install curl lsof -y
 
 RUN curl -fsSL https://bun.sh/install | bash
 
