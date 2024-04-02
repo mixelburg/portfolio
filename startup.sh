@@ -2,10 +2,6 @@
 
 export PATH="$PATH:/root/.bun/bin"
 
-git clone https://github.com/mixelburg/portfolio.git
-
-cd portfolio || exit 1
-
 echo "installing dependencies"
 bun i
 

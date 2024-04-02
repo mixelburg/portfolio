@@ -11,7 +11,7 @@ RUN apt install curl unzip -y
 RUN curl -fsSL https://bun.sh/install | bash
 
 
-CP bootstrap.sh .
+COPY bootstrap.sh .
 
 CMD ["./bootstrap.sh"]
 
