@@ -7,7 +7,7 @@ import NoSsr from '@/coponents/NoSsr';
 const Page: FC = () => {
   return <>
     <Stack
-      spacing={2}
+      spacing={3.5}
       sx={{
         pt: { xs: 5, sm: '20vh' },
       }}

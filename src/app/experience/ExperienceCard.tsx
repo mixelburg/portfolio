@@ -3,7 +3,7 @@
 import { memo, useEffect } from 'react';
 import { Card, CardContent, Chip, Stack, Typography } from '@mui/joy';
 import dayjs from 'dayjs';
-import { animated, useSpring } from '@react-spring/web';
+import { animated, useSpring, config } from '@react-spring/web';
 import { useLazyWindowSize } from '@/hooks/useLazyWindowSize';
 
 
@@ -41,21 +41,26 @@ export const ExperienceCard = memo((props: ExperienceCardProps) => {
     useEffect(() => {
       if (!screenWidth) return;
 
+      const config = {
+        mass: 5, tension: 100, friction: 40
+      }
       const leftAnimation = {
         from: { x: 0 - cardWidth },
         to: { x: (screenWidth / 2) - (cardWidth / 2) },
+        config
       };
       const rightAnimation = {
         from: { x: screenWidth + cardWidth },
         to: { x: screenWidth / 2 - cardWidth / 2 },
+        config
       };
       if (screenWidth) {
-        api.start(props.index % 2 ? leftAnimation : rightAnimation);
+        api.start(props.index % 2 ? rightAnimation : leftAnimation);
       }
+
     }, [cardWidth, screenWidth]);
 
-
-    return <>
+  return <>
       <animated.div
         style={{
           display: 'flex',
