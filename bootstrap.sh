@@ -15,9 +15,6 @@ PID=$!
 kill_startup() {
     echo "Killing the startup script..."
     kill -9 $PID
-    echo "Killing the process on port..."
-    lsof -ti:4444
-    lsof -ti:4444 | xargs kill -9
     wait $PID 2>/dev/null
 }
 
