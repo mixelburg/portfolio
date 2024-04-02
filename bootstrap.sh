@@ -1,5 +1,7 @@
 #!/bin/bash
 
+service nginx start
+
 # Clone the repository if it doesn't already exist
 if [ ! -d "portfolio" ]; then
     git clone https://github.com/mixelburg/portfolio.git
