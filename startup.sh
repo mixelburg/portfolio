@@ -3,11 +3,11 @@
 export PATH="$PATH:/root/.bun/bin"
 
 echo "installing dependencies"
-bun i
+bun i --frozen-lockfile || exit
 
 echo "building the application"
-bun run build
+bun run build || exit
 
 echo "running the application"
-bun run start
+bun run start || exit
 

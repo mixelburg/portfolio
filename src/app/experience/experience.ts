@@ -18,6 +18,6 @@ export const experiences: Omit<ExperienceCardProps, 'index'>[] = [
     startDate: dayjs('aug 2020').toDate(),
     endDate: dayjs('apr 2022').toDate(),
     name: 'Rafael Advanced Defense Systems',
-    description: 'Software Engineer specializing in full-stack web development and managing complex VmWare environments',
+    description: 'Software Engineer specializing in Full-Stack web development and managing complex VmWare environments',
   },
 ];
