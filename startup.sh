@@ -3,7 +3,7 @@
 export PATH="$PATH:/root/.bun/bin"
 
 echo "installing dependencies"
-bun i --verbose
+bun i
 
 echo "building the application"
 bun run build
