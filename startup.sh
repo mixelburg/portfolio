@@ -8,7 +8,7 @@ bun i --frozen-lockfile || exit
 echo "building the application"
 bun run build || exit
 
-lsof -ti:4444 | xargs kill -9
+kill -9 $(lsof -ti:4444)
 echo "running the application"
 bun run start || exit
 
