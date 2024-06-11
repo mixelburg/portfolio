@@ -2,6 +2,10 @@
 
 
 ```shell
+sudo certbot -d kroha.dev --manual --preferred-challenges dns certonly
+// take cert and privkey
+
+docker build -t portfolio .
 docker buildx build --platform linux/amd64 -t portfolio .
 ```
 
