@@ -35,6 +35,7 @@ export const Wrapper = (props: PropsWithChildren) => {
       sx={{
         width: '100dvw',
         height: '100dvh',
+        overflowX: 'hidden',
       }}
     >
       <Stack height="100%" overflow="auto">

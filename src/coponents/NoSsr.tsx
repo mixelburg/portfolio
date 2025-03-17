@@ -3,4 +3,4 @@ import { PropsWithChildren } from 'react';
 
 const NoSsr = ({ children }: PropsWithChildren) => <>{children}</>;
 
-export default dynamic(() => Promise.resolve(NoSsr), { ssr: false });
+export default dynamic(() => Promise.resolve(NoSsr), { ssr: !!false });

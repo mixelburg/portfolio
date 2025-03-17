@@ -1,10 +1,16 @@
 import dayjs from 'dayjs';
-import { ExperienceCardProps } from '@/app/experience/ExperienceCard';
+import {ExperienceCardProps} from '@/app/experience/ExperienceCard';
 
 export const experiences: Omit<ExperienceCardProps, 'index'>[] = [
   {
-    startDate: dayjs('oct 2023').toDate(),
+    startDate: dayjs('sep 2024').toDate(),
     endDate: dayjs().toDate(),
+    name: 'CodeValue',
+    description: 'Full-Stack developer specializing in React and Nestjs. Working on geo-spacial data processing and visualization applications',
+  },
+  {
+    startDate: dayjs('oct 2023').toDate(),
+    endDate: dayjs('aug 2024').toDate(),
     name: 'Justt',
     description: 'Full-Stack developer specializing in React and Nestjs. Focusing primarily on large scale data processing and microservices',
   },

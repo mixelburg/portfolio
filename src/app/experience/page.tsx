@@ -1,7 +1,7 @@
-import { FC } from 'react';
-import { Stack, Typography } from '@mui/joy';
-import { experiences } from '@/app/experience/experience';
-import { ExperienceCard } from '@/app/experience/ExperienceCard';
+import {FC} from 'react';
+import {Stack, Typography} from '@mui/joy';
+import {experiences} from '@/app/experience/experience';
+import {ExperienceCard} from '@/app/experience/ExperienceCard';
 import NoSsr from '@/coponents/NoSsr';
 
 const Page: FC = () => {
@@ -9,7 +9,8 @@ const Page: FC = () => {
     <Stack
       spacing={3.5}
       sx={{
-        pt: { xs: 5, sm: '20vh' },
+        pt: {xs: 5, sm: '20vh'},
+        height: '100%',
       }}
     >
       <Stack direction="row" justifyContent="center">
@@ -32,10 +33,17 @@ const Page: FC = () => {
       </Stack>
 
       <NoSsr>
-        <Stack spacing={2}>
+        <Stack
+          spacing={2}
+          sx={{
+            height: '100%',
+            overflowX: 'hidden',
+            overflowY: 'auto',
+          }}
+        >
           {
             experiences.map(((experience, index) => (
-              <ExperienceCard key={experience.name} {...experience} index={index} />
+              <ExperienceCard key={experience.name} {...experience} index={index}/>
             )))
           }
         </Stack>

@@ -30,6 +30,7 @@ const getDuration = (startDate: Date, endDate: Date): string => {
 
 const maxCardWidth = 400;
 export const ExperienceCard = memo((props: ExperienceCardProps) => {
+
     const duration = getDuration(props.startDate, props.endDate);
     const { width: screenWidth } = useLazyWindowSize();
     const cardWidth = screenWidth > maxCardWidth + 20 ? maxCardWidth : screenWidth - 20;
