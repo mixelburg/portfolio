@@ -1,11 +1,10 @@
 'use client';
 
-import { memo, useEffect } from 'react';
-import { Card, CardContent, Chip, Stack, Typography } from '@mui/joy';
+import {memo, useEffect} from 'react';
+import {Card, CardContent, Chip, Stack, Typography} from '@mui/joy';
 import dayjs from 'dayjs';
-import { animated, useSpring } from '@react-spring/web';
-import { useLazyWindowSize } from '@/hooks/useLazyWindowSize';
-
+import {animated, useSpring} from '@react-spring/web';
+import {useLazyWindowSize} from '@/hooks/useLazyWindowSize';
 
 export type ExperienceCardProps = {
   startDate: Date;
@@ -32,11 +31,11 @@ const maxCardWidth = 400;
 export const ExperienceCard = memo((props: ExperienceCardProps) => {
 
     const duration = getDuration(props.startDate, props.endDate);
-    const { width: screenWidth } = useLazyWindowSize();
+    const {width: screenWidth} = useLazyWindowSize();
     const cardWidth = screenWidth > maxCardWidth + 20 ? maxCardWidth : screenWidth - 20;
 
     const [springs, api] = useSpring(() => ({
-      from: { x: -99999 },
+      from: {x: -99999},
     }));
 
     useEffect(() => {
@@ -46,13 +45,13 @@ export const ExperienceCard = memo((props: ExperienceCardProps) => {
         mass: 5, tension: 100, friction: 40,
       };
       const leftAnimation = {
-        from: { x: 0 - cardWidth },
-        to: { x: (screenWidth / 2) - (cardWidth / 2) },
+        from: {x: 0 - cardWidth},
+        to: {x: (screenWidth / 2) - (cardWidth / 2)},
         config,
       };
       const rightAnimation = {
-        from: { x: screenWidth + cardWidth },
-        to: { x: screenWidth / 2 - cardWidth / 2 },
+        from: {x: screenWidth + cardWidth},
+        to: {x: screenWidth / 2 - cardWidth / 2},
         config,
       };
       if (screenWidth) {
@@ -62,6 +61,7 @@ export const ExperienceCard = memo((props: ExperienceCardProps) => {
     }, [cardWidth, screenWidth]);
 
     return <>
+      {/*// @ts-ignore*/}
       <animated.div
         style={{
           display: 'flex',
@@ -69,12 +69,12 @@ export const ExperienceCard = memo((props: ExperienceCardProps) => {
           ...springs,
         }}
       >
-        <Card sx={{ width: cardWidth }}>
+        <Card sx={{width: cardWidth}}>
           <Stack direction="row" spacing={1} justifyContent="space-between">
             <Typography level="title-sm" fontWeight="bold">
               {props.name}
             </Typography>
-            <Chip variant="soft" sx={{ bgcolor: 'background.level1' }}>
+            <Chip variant="soft" sx={{bgcolor: 'background.level1'}}>
               {duration}
             </Chip>
           </Stack>
