@@ -47,7 +47,7 @@ export const Wrapper = (props: PropsWithChildren) => {
           pb={2}
           pt={1}
         >
-          <StyledLink href={'/about'} text={'ABOUT'} />
+          <StyledLink href={'/'} text={'ABOUT'} />
           <StyledLink href={'/experience'} text={'EXPERIENCE'} />
         </Stack>
       </Stack>
