@@ -3,10 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "bun --bun next dev --hostname 0.0.0.0 --port 4444",
-    "build": "next build",
-    "start": "bun --bun next start --port 4444",
-    "lint": "bun --bun next lint"
+    "dev": "bun next dev --hostname 0.0.0.0 --port 4444",
+    "build": "bun next build",
+    "lint": "bun next lint"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
