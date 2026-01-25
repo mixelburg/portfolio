@@ -20,7 +20,7 @@ export const SkillsCard = forwardRef<HTMLDivElement>((_, ref) => {
   ];
 
   return (
-    <Card ref={ref}>
+    <Card ref={ref} target='_blank'>
       <Stack gap={2} height="100%">
         <Typography variant="h6" fontWeight="bold" sx={{ m: 0 }}>
           Tech Stack

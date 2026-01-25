@@ -8,7 +8,7 @@ import { primary } from '@/theme';
 
 export const ProjectsCard = forwardRef<HTMLDivElement>((_, ref) => {
   return (
-    <Card ref={ref} href="https://github.com/mixelburg?tab=repositories">
+    <Card ref={ref} href="https://github.com/mixelburg" >
       <Stack direction="row" justifyContent="space-between" alignItems="flex-start" height="100%">
         <Typography variant="h6" fontWeight="bold" sx={{ m: 0 }}>
           Projects

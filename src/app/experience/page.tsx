@@ -1,23 +1,26 @@
-'use client';
+"use client";
 
-import { Box, IconButton, Stack, Typography } from '@mui/material';
-import { experiences } from '@/app/experience/experience';
-import { ExperienceCard } from '@/app/experience/ExperienceCard';
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import Link from 'next/link';
-import { darkslate, primary } from '@/theme';
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
+import { Box, IconButton, Stack, Typography } from "@mui/material";
+import Link from "next/link";
+import { ExperienceCard } from "@/app/experience/ExperienceCard";
+import { experiences } from "@/app/experience/experience";
+import TargetCursor from "@/components/TargetCursor/TargetCursor";
+import { darkslate, primary } from "@/theme";
 
 const Page = () => {
   return (
     <Box
       sx={{
-        m: 'auto',
+        m: "auto",
         p: { xs: 2, sm: 3, md: 4 },
-        width: '100%',
-        maxWidth: '800px',
-        minHeight: '100vh',
+        width: "100%",
+        maxWidth: "800px",
+        minHeight: "100vh",
       }}
     >
+      <TargetCursor spinDuration={2} hideDefaultCursor parallaxOn hoverDuration={0.2} />
+
       <Stack gap={4}>
         <Stack direction="row" alignItems="center" gap={2}>
           <IconButton
@@ -26,7 +29,7 @@ const Page = () => {
             sx={{
               bgcolor: darkslate[500],
               border: `1px solid ${darkslate[400]}`,
-              '&:hover': {
+              "&:hover": {
                 bgcolor: darkslate[500],
                 borderColor: primary[500],
               },

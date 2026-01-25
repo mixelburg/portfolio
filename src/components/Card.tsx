@@ -9,12 +9,15 @@ type CardProps = {
   children: ReactNode;
   href?: string;
   sx?: SxProps<Theme>;
+  className?: string;
+  target?: string;
 };
 
-export const Card = forwardRef<HTMLDivElement, CardProps>(({ children, href, sx }, ref) => {
+export const Card = forwardRef<HTMLDivElement, CardProps>(({ children, href, sx, className, target }, ref) => {
   const content = (
     <Box
       ref={ref}
+      className={`cursor-target ${className ?? ''}`}
       sx={{
         bgcolor: darkslate[500],
         borderRadius: 2,
@@ -39,10 +42,13 @@ export const Card = forwardRef<HTMLDivElement, CardProps>(({ children, href, sx 
       <Box
         component="a"
         href={href}
+        className={className}
+        target={target ?? undefined}
         sx={{
           textDecoration: 'none',
           color: 'inherit',
           display: 'contents',
+          cursor: 'none'
         }}
       >
         {content}

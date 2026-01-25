@@ -35,12 +35,14 @@ export const OpenSourceCard = forwardRef<HTMLDivElement>((_, ref) => {
         <Stack gap={1.5}>
           {projects.map((project) => (
             <Box
+              className='cursor-target'
               key={project.name}
               component="a"
               href={project.href}
               target="_blank"
               rel="noopener noreferrer"
               sx={{
+                cursor: 'none',
                 p: 1.5,
                 borderRadius: 1,
                 bgcolor: darkslate[900],

@@ -35,6 +35,7 @@ export const ExperienceCard = memo((props: ExperienceCardProps) => {
 
   return (
     <Box
+      className='cursor-target'
       sx={{
         bgcolor: darkslate[500],
         borderRadius: 2,
