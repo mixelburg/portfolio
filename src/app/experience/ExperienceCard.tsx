@@ -1,18 +1,17 @@
 'use client';
 
-import {memo, useEffect} from 'react';
-import {Card, CardContent, Chip, Stack, Typography} from '@mui/joy';
+import { memo } from 'react';
+import { Box, Chip, Stack, Typography } from '@mui/joy';
 import dayjs from 'dayjs';
-import {animated, useSpring} from '@react-spring/web';
-import {useLazyWindowSize} from '@/hooks/useLazyWindowSize';
+import { darkslate, primary } from '@/theme';
 
 export type ExperienceCardProps = {
   startDate: Date;
   endDate: Date;
   name: string;
-  description: string
+  description: string;
   index: number;
-}
+};
 
 const getDuration = (startDate: Date, endDate: Date): string => {
   const _endDate = dayjs(endDate);
@@ -26,66 +25,58 @@ const getDuration = (startDate: Date, endDate: Date): string => {
   return yearsPart + `${diffMonths} m`;
 };
 
+const formatDate = (date: Date): string => {
+  return dayjs(date).format('MMM YYYY');
+};
 
-const maxCardWidth = 400;
 export const ExperienceCard = memo((props: ExperienceCardProps) => {
+  const duration = getDuration(props.startDate, props.endDate);
+  const isPresent = dayjs(props.endDate).isSame(dayjs(), 'month');
 
-    const duration = getDuration(props.startDate, props.endDate);
-    const {width: screenWidth} = useLazyWindowSize();
-    const cardWidth = screenWidth > maxCardWidth + 20 ? maxCardWidth : screenWidth - 20;
-
-    const [springs, api] = useSpring(() => ({
-      from: {x: -99999},
-    }));
-
-    useEffect(() => {
-      if (!screenWidth) return;
-
-      const config = {
-        mass: 5, tension: 100, friction: 40,
-      };
-      const leftAnimation = {
-        from: {x: 0 - cardWidth},
-        to: {x: (screenWidth / 2) - (cardWidth / 2)},
-        config,
-      };
-      const rightAnimation = {
-        from: {x: screenWidth + cardWidth},
-        to: {x: screenWidth / 2 - cardWidth / 2},
-        config,
-      };
-      if (screenWidth) {
-        api.start(props.index % 2 ? rightAnimation : leftAnimation);
-      }
-
-    }, [cardWidth, screenWidth]);
-
-    return <>
-      {/*// @ts-ignore*/}
-      <animated.div
-        style={{
-          display: 'flex',
-          width: cardWidth,
-          ...springs,
-        }}
-      >
-        <Card sx={{width: cardWidth}}>
-          <Stack direction="row" spacing={1} justifyContent="space-between">
-            <Typography level="title-sm" fontWeight="bold">
-              {props.name}
+  return (
+    <Box
+      sx={{
+        bgcolor: darkslate[500],
+        borderRadius: 'lg',
+        border: `1px solid ${darkslate[400]}`,
+        p: 3,
+        transition: 'border-color 0.3s ease',
+        '&:hover': {
+          borderColor: primary[500],
+        },
+      }}
+    >
+      <Stack gap={2}>
+        <Stack
+          direction={{ xs: 'column', sm: 'row' }}
+          justifyContent="space-between"
+          alignItems={{ xs: 'flex-start', sm: 'center' }}
+          gap={1}
+        >
+          <Typography level="title-lg" fontWeight="bold">
+            {props.name}
+          </Typography>
+          <Stack direction="row" gap={1} alignItems="center">
+            <Typography level="body-sm" sx={{ color: darkslate[300] }}>
+              {formatDate(props.startDate)} - {isPresent ? 'Present' : formatDate(props.endDate)}
             </Typography>
-            <Chip variant="soft" sx={{bgcolor: 'background.level1'}}>
+            <Chip
+              variant="soft"
+              size="sm"
+              sx={{
+                bgcolor: darkslate[900],
+                border: `1px solid ${darkslate[400]}`,
+                color: 'white',
+              }}
+            >
               {duration}
             </Chip>
           </Stack>
-          <CardContent>
-            <Typography level="body-sm">
-              {props.description}
-            </Typography>
-          </CardContent>
-        </Card>
-      </animated.div>
-    </>;
-  })
-;
-
+        </Stack>
+        <Typography level="body-md" sx={{ color: darkslate[100] }}>
+          {props.description}
+        </Typography>
+      </Stack>
+    </Box>
+  );
+});

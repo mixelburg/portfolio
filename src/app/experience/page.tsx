@@ -1,55 +1,52 @@
-import {FC} from 'react';
-import {Stack, Typography} from '@mui/joy';
-import {experiences} from '@/app/experience/experience';
-import {ExperienceCard} from '@/app/experience/ExperienceCard';
-import NoSsr from '@/coponents/NoSsr';
+'use client';
 
-const Page: FC = () => {
-  return <>
-    <Stack
-      spacing={3.5}
+import { Box, IconButton, Stack, Typography } from '@mui/joy';
+import { experiences } from '@/app/experience/experience';
+import { ExperienceCard } from '@/app/experience/ExperienceCard';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import Link from 'next/link';
+import { darkslate, primary } from '@/theme';
+
+const Page = () => {
+  return (
+    <Box
       sx={{
-        pt: {xs: 5, sm: '20vh'},
-        height: '100%',
+        m: 'auto',
+        p: { xs: 2, sm: 3, md: 4 },
+        width: '100%',
+        maxWidth: '800px',
+        minHeight: '100vh',
       }}
     >
-      <Stack direction="row" justifyContent="center">
-        <Typography
-          level="h2"
-          sx={{
-            animation: 'fadeIn 2s ease-out forwards',
-            '@keyframes fadeIn': {
-              '0%': {
-                opacity: 0,
+      <Stack gap={4}>
+        <Stack direction="row" alignItems="center" gap={2}>
+          <IconButton
+            component={Link}
+            href="/"
+            sx={{
+              bgcolor: darkslate[500],
+              border: `1px solid ${darkslate[400]}`,
+              '&:hover': {
+                bgcolor: darkslate[500],
+                borderColor: primary[500],
               },
-              '100%': {
-                opacity: 1,
-              },
-            },
-          }}
-        >
-          Experience
-        </Typography>
-      </Stack>
-
-      <NoSsr>
-        <Stack
-          spacing={2}
-          sx={{
-            height: '100%',
-            overflowX: 'hidden',
-            overflowY: 'auto',
-          }}
-        >
-          {
-            experiences.map(((experience, index) => (
-              <ExperienceCard key={experience.name} {...experience} index={index}/>
-            )))
-          }
+            }}
+          >
+            <ArrowBackIcon />
+          </IconButton>
+          <Typography level="h2" fontWeight="bold">
+            Experience
+          </Typography>
         </Stack>
-      </NoSsr>
-    </Stack>
-  </>;
+
+        <Stack gap={2}>
+          {experiences.map((experience, index) => (
+            <ExperienceCard key={experience.name} {...experience} index={index} />
+          ))}
+        </Stack>
+      </Stack>
+    </Box>
+  );
 };
 
 export default Page;

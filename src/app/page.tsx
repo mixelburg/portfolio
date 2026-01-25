@@ -1,44 +1,48 @@
-import { Link, Stack, Typography } from '@mui/joy';
-import { colors } from '@/colors';
-import GitHubIcon from '@mui/icons-material/GitHub';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import { Box } from '@mui/joy';
+import { IntroCard } from '@/components/IntroCard';
+import { AboutCard } from '@/components/AboutCard';
+import { ContactCard } from '@/components/ContactCard';
+import { TimeCard } from '@/components/TimeCard';
+import { ExperienceLinkCard } from '@/components/ExperienceLinkCard';
+import { NowCard } from '@/components/NowCard';
+import { ProjectsCard } from '@/components/ProjectsCard';
+import { SkillsCard } from '@/components/SkillsCard';
 
 const Page = () => {
-
-  return <>
-    <Stack p={2} alignItems="center" width="100dvw" height="100dvh" pt="20vh">
-      <Stack spacing={2}>
-        <Typography level="h1" component="div">
-          Hi, my name is <Typography sx={{ color: 'primary.300' }}>Ivan Kroha</Typography>
-        </Typography>
-
-        <Stack spacing={0.5}>
-          <Stack direction="row" spacing={1}>
-            <Typography level="body-lg">
-              You can find me at
-            </Typography>
-            <Typography sx={{ color: colors.blue[400] }} fontWeight="bold" level="body-lg">
-              me@kroha.dev
-            </Typography>
-          </Stack>
-
-          <Stack direction="row" spacing={0.5} fontSize={25}>
-            <Typography level="body-lg">
-              or here
-            </Typography>
-            <Link fontSize="inherit" target="_blank" href="https://github.com/mixelburg">
-              <GitHubIcon fontSize="inherit" />
-            </Link>
-            <Link fontSize="inherit" target="_blank" href="https://www.linkedin.com/in/mixelburg">
-              <LinkedInIcon fontSize="inherit" />
-            </Link>
-          </Stack>
-        </Stack>
-
-
-      </Stack>
-    </Stack>
-  </>;
+  return (
+    <Box
+      component="main"
+      sx={{
+        m: 'auto',
+        p: { xs: 1, sm: 2, md: 3 },
+        width: '100%',
+        maxWidth: '1200px',
+        display: 'grid',
+        gap: { xs: 1, sm: 2, md: 3 },
+        gridTemplateColumns: {
+          xs: '1fr',
+          md: 'repeat(2, 1fr)',
+          lg: 'repeat(4, 1fr)',
+        },
+        gridAutoRows: {
+          xs: 'auto',
+          lg: 'minmax(80px, auto)',
+        },
+        minHeight: { lg: '100vh' },
+        maxHeight: { lg: '800px' },
+        overflow: 'hidden',
+      }}
+    >
+      <IntroCard />
+      <AboutCard />
+      <ContactCard />
+      <TimeCard />
+      <ExperienceLinkCard />
+      <NowCard />
+      <ProjectsCard />
+      <SkillsCard />
+    </Box>
+  );
 };
 
 export default Page;
