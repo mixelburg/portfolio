@@ -1,27 +1,28 @@
 'use client';
 
-import { Box, IconButton, Link, Stack, Typography } from '@mui/joy';
+import { forwardRef } from 'react';
+import { Box, IconButton, Stack, Typography } from '@mui/material';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import { Card } from '@/components/Card';
 import { darkslate, primary } from '@/theme';
 
-export const IntroCard = () => {
+export const IntroCard = forwardRef<HTMLDivElement>((_, ref) => {
   return (
-    <Card>
+    <Card ref={ref}>
       <Stack direction={{ xs: 'column', md: 'row' }} justifyContent="space-between" height="100%" gap={2}>
         <Stack justifyContent="space-between" height="100%" gap={2} flex={1}>
           <Stack>
             <Typography
-              level="body-sm"
+              variant="body2"
               sx={{ color: darkslate[300], m: 0 }}
             >
               welcome
             </Typography>
-            <Typography level="body-md" sx={{ mt: 1 }}>
-              Hi, I'm <Typography color='primary' component="span" fontWeight="bold">Ivan Kroha</Typography>, a full-stack software developer with a strong focus on building scalable applications, clean architecture, and great user experiences.
+            <Typography variant="body1" sx={{ mt: 1 }}>
+              Hi, I'm <Typography color="primary" component="span" fontWeight="bold">Ivan Kroha</Typography>, a full-stack software developer with a strong focus on building scalable applications, clean architecture, and great user experiences.
             </Typography>
-            <Typography level="body-md" sx={{ mt: 2 }}>
+            <Typography variant="body1" sx={{ mt: 2 }}>
               Feel free to reach out if you have any project in mind, want to collaborate, or just want to say hello.
             </Typography>
           </Stack>
@@ -38,7 +39,6 @@ export const IntroCard = () => {
                   border: `1px solid ${primary[500]}`,
                   boxShadow: `3px 3px 0 ${primary[500]}`,
                   borderRadius: 'md',
-                  px: 2.5,
                   '&:hover': {
                     bgcolor: darkslate[900],
                     color: primary[500],
@@ -61,7 +61,6 @@ export const IntroCard = () => {
                   border: `1px solid ${primary[500]}`,
                   boxShadow: `3px 3px 0 ${primary[500]}`,
                   borderRadius: 'md',
-                  px: 2.5,
                   '&:hover': {
                     bgcolor: darkslate[900],
                     color: primary[500],
@@ -119,4 +118,4 @@ export const IntroCard = () => {
       </Stack>
     </Card>
   );
-};
+});

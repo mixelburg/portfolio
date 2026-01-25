@@ -1,5 +1,8 @@
-import { Box } from '@mui/joy';
+'use client';
+
+import { Box } from '@mui/material';
 import Grid from '@mui/material/Grid';
+import { Fade } from '@mui/material';
 import { IntroCard } from '@/components/IntroCard';
 import { AboutCard } from '@/components/AboutCard';
 import { ContactCard } from '@/components/ContactCard';
@@ -23,33 +26,51 @@ const Page = () => {
     >
       <Grid container spacing={{ xs: 1, sm: 2, md: 3 }}>
         <Grid size={{ xs: 12, md: 6, lg: 9 }}>
-          <IntroCard />
+          <Fade in timeout={500} style={{ transitionDelay: '100ms' }}>
+            <IntroCard />
+          </Fade>
         </Grid>
         <Grid size={{ xs: 12, md: 6, lg: 3 }}>
-          <AboutCard />
-        </Grid>
-
-        <Grid size={{ xs: 12, md: 6, lg: 3 }}>
-          <ContactCard />
-        </Grid>
-        <Grid size={{ xs: 12, md: 6, lg: 3 }}>
-          <TimeCard />
-        </Grid>
-        <Grid size={{ xs: 12, md: 6, lg: 3 }}>
-          <OpenSourceCard />
+          <Fade in timeout={500} style={{ transitionDelay: '200ms' }}>
+            <AboutCard />
+          </Fade>
         </Grid>
 
         <Grid size={{ xs: 12, md: 6, lg: 3 }}>
-          <SkillsCard />
+          <Fade in timeout={500} style={{ transitionDelay: '300ms' }}>
+            <ContactCard />
+          </Fade>
         </Grid>
         <Grid size={{ xs: 12, md: 6, lg: 3 }}>
-          <NowCard />
+          <Fade in timeout={500} style={{ transitionDelay: '400ms' }}>
+            <TimeCard />
+          </Fade>
         </Grid>
         <Grid size={{ xs: 12, md: 6, lg: 3 }}>
-          <ProjectsCard />
+          <Fade in timeout={500} style={{ transitionDelay: '500ms' }}>
+            <OpenSourceCard />
+          </Fade>
+        </Grid>
+
+        <Grid size={{ xs: 12, md: 6, lg: 3 }}>
+          <Fade in timeout={500} style={{ transitionDelay: '600ms' }}>
+            <SkillsCard />
+          </Fade>
         </Grid>
         <Grid size={{ xs: 12, md: 6, lg: 3 }}>
-          <ExperienceLinkCard />
+          <Fade in timeout={500} style={{ transitionDelay: '700ms' }}>
+            <NowCard />
+          </Fade>
+        </Grid>
+        <Grid size={{ xs: 12, md: 6, lg: 3 }}>
+          <Fade in timeout={500} style={{ transitionDelay: '800ms' }}>
+            <ProjectsCard />
+          </Fade>
+        </Grid>
+        <Grid size={{ xs: 12, md: 6, lg: 3 }}>
+          <Fade in timeout={500} style={{ transitionDelay: '900ms' }}>
+            <ExperienceLinkCard />
+          </Fade>
         </Grid>
       </Grid>
     </Box>

@@ -11,7 +11,6 @@
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",
     "@mui/icons-material": "^6.4.12",
-    "@mui/joy": "^5.0.0-beta.52",
     "@mui/material": "^7.3.7",
     "@react-spring/web": "^9.7.5",
     "dayjs": "^1.11.13",

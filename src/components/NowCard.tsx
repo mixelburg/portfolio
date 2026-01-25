@@ -1,16 +1,17 @@
 'use client';
 
-import { Box, Stack, Typography, Link } from '@mui/joy';
+import { forwardRef } from 'react';
+import { Box, Stack, Typography, Link } from '@mui/material';
 import { Card } from '@/components/Card';
 import { darkslate, primary } from '@/theme';
 
-export const NowCard = () => {
+export const NowCard = forwardRef<HTMLDivElement>((_, ref) => {
   return (
-    <Card sx={{ p: 2 }}>
+    <Card ref={ref} sx={{ p: 2 }}>
       <Stack gap={1}>
         <Stack direction="row" justifyContent="space-between" alignItems="flex-start">
           <Stack direction="row" alignItems="center" gap={1}>
-            <Typography level="h4" fontWeight="bold" sx={{ m: 0 }}>
+            <Typography variant="h6" fontWeight="bold" sx={{ m: 0 }}>
               Now
             </Typography>
             <Link
@@ -54,10 +55,10 @@ export const NowCard = () => {
             />
           </Box>
         </Stack>
-        <Typography level="body-xs">
+        <Typography variant="caption">
           Currently working full-time at CodeValue
         </Typography>
       </Stack>
     </Card>
   );
-};
+});

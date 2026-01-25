@@ -1,7 +1,7 @@
 'use client';
 
 import { PropsWithChildren } from 'react';
-import { Box } from '@mui/joy';
+import { Box } from '@mui/material';
 import { GridBackground } from '@/components/GridBackground';
 import { darkslate } from '@/theme';
 

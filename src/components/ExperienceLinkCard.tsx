@@ -1,17 +1,18 @@
 'use client';
 
-import { Stack, Typography } from '@mui/joy';
+import { forwardRef } from 'react';
+import { Stack, Typography } from '@mui/material';
 import { Card } from '@/components/Card';
 import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward';
 import Link from 'next/link';
 import { primary } from '@/theme';
 
-export const ExperienceLinkCard = () => {
+export const ExperienceLinkCard = forwardRef<HTMLDivElement>((_, ref) => {
   return (
     <Link href="/experience" style={{ textDecoration: 'none', color: 'inherit', display: 'contents' }}>
-      <Card>
+      <Card ref={ref}>
         <Stack direction="row" justifyContent="space-between" alignItems="flex-start" height="100%">
-          <Typography level="h4" fontWeight="bold" sx={{ m: 0 }}>
+          <Typography variant="h6" fontWeight="bold" sx={{ m: 0 }}>
             Experience
           </Typography>
           <ArrowOutwardIcon
@@ -27,4 +28,4 @@ export const ExperienceLinkCard = () => {
       </Card>
     </Link>
   );
-};
+});

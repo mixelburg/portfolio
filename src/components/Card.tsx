@@ -1,22 +1,23 @@
 'use client';
 
-import { Box } from '@mui/joy';
-import { SxProps } from '@mui/joy/styles/types';
-import { ReactNode } from 'react';
+import { Box } from '@mui/material';
+import { SxProps, Theme } from '@mui/material/styles';
+import { forwardRef, ReactNode } from 'react';
 import { darkslate, primary } from '@/theme';
 
 type CardProps = {
   children: ReactNode;
   href?: string;
-  sx?: SxProps;
+  sx?: SxProps<Theme>;
 };
 
-export const Card = ({ children, href, sx }: CardProps) => {
+export const Card = forwardRef<HTMLDivElement, CardProps>(({ children, href, sx }, ref) => {
   const content = (
     <Box
+      ref={ref}
       sx={{
         bgcolor: darkslate[500],
-        borderRadius: 'lg',
+        borderRadius: 2,
         border: `1px solid ${darkslate[400]}`,
         p: 3,
         height: '100%',
@@ -50,4 +51,4 @@ export const Card = ({ children, href, sx }: CardProps) => {
   }
 
   return content;
-};
+});

@@ -1,6 +1,6 @@
 'use client';
 
-import { Box, IconButton, Stack, Typography } from '@mui/joy';
+import { Box, IconButton, Stack, Typography } from '@mui/material';
 import { experiences } from '@/app/experience/experience';
 import { ExperienceCard } from '@/app/experience/ExperienceCard';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
@@ -34,7 +34,7 @@ const Page = () => {
           >
             <ArrowBackIcon />
           </IconButton>
-          <Typography level="h2" fontWeight="bold">
+          <Typography variant="h4" fontWeight="bold">
             Experience
           </Typography>
         </Stack>

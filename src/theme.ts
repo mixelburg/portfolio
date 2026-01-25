@@ -1,4 +1,4 @@
-import { extendTheme } from '@mui/joy';
+import { createTheme } from '@mui/material/styles';
 
 export const darkslate = {
   50: '#f7f7f7',
@@ -25,32 +25,23 @@ export const primary = {
   900: '#1D0A42',
 };
 
-export const theme = extendTheme({
-  colorSchemes: {
-    dark: {
-      palette: {
-        background: {
-          body: darkslate[700],
-          surface: darkslate[500],
-          level1: darkslate[400],
-        },
-        primary: {
-          50: primary[100],
-          100: primary[100],
-          200: primary[200],
-          300: primary[300],
-          400: primary[400],
-          500: primary[500],
-          600: primary[600],
-          700: primary[700],
-          800: primary[800],
-          900: primary[900],
-        },
-      },
+export const theme = createTheme({
+  palette: {
+    mode: 'dark',
+    background: {
+      default: darkslate[700],
+      paper: darkslate[500],
+    },
+    primary: {
+      main: primary[500],
+      light: primary[300],
+      dark: primary[700],
     },
   },
-  fontFamily: {
-    body: '"Inter", sans-serif',
-    display: '"Inter", sans-serif',
+  typography: {
+    fontFamily: '"Inter", sans-serif',
+  },
+  shape: {
+    borderRadius: 12,
   },
 });

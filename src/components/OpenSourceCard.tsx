@@ -1,6 +1,7 @@
 'use client';
 
-import { Box, Stack, Typography } from '@mui/joy';
+import { forwardRef } from 'react';
+import { Box, Stack, Typography } from '@mui/material';
 import { Card } from '@/components/Card';
 import { darkslate, primary } from '@/theme';
 import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward';
@@ -24,11 +25,11 @@ const projects: Project[] = [
   },
 ];
 
-export const OpenSourceCard = () => {
+export const OpenSourceCard = forwardRef<HTMLDivElement>((_, ref) => {
   return (
-    <Card>
+    <Card ref={ref}>
       <Stack gap={2} height="100%">
-        <Typography level="h4" fontWeight="bold" sx={{ m: 0 }}>
+        <Typography variant="h6" fontWeight="bold" sx={{ m: 0 }}>
           Open Source
         </Typography>
         <Stack gap={1.5}>
@@ -41,7 +42,7 @@ export const OpenSourceCard = () => {
               rel="noopener noreferrer"
               sx={{
                 p: 1.5,
-                borderRadius: 'md',
+                borderRadius: 1,
                 bgcolor: darkslate[900],
                 border: `1px solid ${darkslate[400]}`,
                 textDecoration: 'none',
@@ -61,10 +62,10 @@ export const OpenSourceCard = () => {
               }}
             >
               <Stack gap={0.5}>
-                <Typography level="body-sm" fontWeight="bold" sx={{ color: 'white' }}>
+                <Typography variant="body2" fontWeight="bold" sx={{ color: 'white' }}>
                   {project.name}
                 </Typography>
-                <Typography level="body-xs" sx={{ color: darkslate[300] }}>
+                <Typography variant="caption" sx={{ color: darkslate[300] }}>
                   {project.description}
                 </Typography>
               </Stack>
@@ -83,4 +84,4 @@ export const OpenSourceCard = () => {
       </Stack>
     </Card>
   );
-};
+});

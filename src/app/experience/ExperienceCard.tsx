@@ -1,7 +1,7 @@
 'use client';
 
 import { memo } from 'react';
-import { Box, Chip, Stack, Typography } from '@mui/joy';
+import { Box, Chip, Stack, Typography } from '@mui/material';
 import dayjs from 'dayjs';
 import { darkslate, primary } from '@/theme';
 
@@ -37,7 +37,7 @@ export const ExperienceCard = memo((props: ExperienceCardProps) => {
     <Box
       sx={{
         bgcolor: darkslate[500],
-        borderRadius: 'lg',
+        borderRadius: 2,
         border: `1px solid ${darkslate[400]}`,
         p: 3,
         transition: 'border-color 0.3s ease',
@@ -53,27 +53,26 @@ export const ExperienceCard = memo((props: ExperienceCardProps) => {
           alignItems={{ xs: 'flex-start', sm: 'center' }}
           gap={1}
         >
-          <Typography level="title-lg" fontWeight="bold">
+          <Typography variant="h6" fontWeight="bold">
             {props.name}
           </Typography>
           <Stack direction="row" gap={1} alignItems="center">
-            <Typography level="body-sm" sx={{ color: darkslate[300] }}>
+            <Typography variant="body2" sx={{ color: darkslate[300] }}>
               {formatDate(props.startDate)} - {isPresent ? 'Present' : formatDate(props.endDate)}
             </Typography>
             <Chip
-              variant="soft"
-              size="sm"
+              variant="outlined"
+              size="small"
+              label={duration}
               sx={{
                 bgcolor: darkslate[900],
-                border: `1px solid ${darkslate[400]}`,
+                borderColor: darkslate[400],
                 color: 'white',
               }}
-            >
-              {duration}
-            </Chip>
+            />
           </Stack>
         </Stack>
-        <Typography level="body-md" sx={{ color: darkslate[100] }}>
+        <Typography variant="body1" sx={{ color: darkslate[100] }}>
           {props.description}
         </Typography>
       </Stack>

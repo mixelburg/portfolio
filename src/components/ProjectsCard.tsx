@@ -1,15 +1,16 @@
 'use client';
 
-import { Stack, Typography } from '@mui/joy';
+import { forwardRef } from 'react';
+import { Stack, Typography } from '@mui/material';
 import { Card } from '@/components/Card';
 import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward';
 import { primary } from '@/theme';
 
-export const ProjectsCard = () => {
+export const ProjectsCard = forwardRef<HTMLDivElement>((_, ref) => {
   return (
-    <Card href="https://github.com/mixelburg?tab=repositories">
+    <Card ref={ref} href="https://github.com/mixelburg?tab=repositories">
       <Stack direction="row" justifyContent="space-between" alignItems="flex-start" height="100%">
-        <Typography level="h4" fontWeight="bold" sx={{ m: 0 }}>
+        <Typography variant="h6" fontWeight="bold" sx={{ m: 0 }}>
           Projects
         </Typography>
         <ArrowOutwardIcon
@@ -24,4 +25,4 @@ export const ProjectsCard = () => {
       </Stack>
     </Card>
   );
-};
+});

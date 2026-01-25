@@ -1,27 +1,28 @@
 'use client';
 
-import { Box, Link, Stack, Typography } from '@mui/joy';
+import { forwardRef } from 'react';
+import { Box, Link, Stack, Typography } from '@mui/material';
 import { Card } from '@/components/Card';
 import { darkslate } from '@/theme';
 
-export const ContactCard = () => {
+export const ContactCard = forwardRef<HTMLDivElement>((_, ref) => {
   return (
-    <Card>
+    <Card ref={ref}>
       <Stack height="100%" gap={2}>
-        <Typography level="h4" fontWeight="bold">
+        <Typography variant="h6" fontWeight="bold">
           Let's start working together!
         </Typography>
 
         <Box component="address" sx={{ fontStyle: 'normal' }}>
-          <Typography level="body-sm" sx={{ color: darkslate[300] }}>
+          <Typography variant="body2" sx={{ color: darkslate[300] }}>
             Contact Details
           </Typography>
-          <Typography level="body-sm">me@kroha.dev</Typography>
-          <Typography level="body-md">Israel</Typography>
+          <Typography variant="body2">me@kroha.dev</Typography>
+          <Typography variant="body1">Israel</Typography>
         </Box>
 
         <Box>
-          <Typography level="body-sm" sx={{ color: darkslate[300] }}>
+          <Typography variant="body2" sx={{ color: darkslate[300] }}>
             Socials
           </Typography>
           <Box component="ul" sx={{ listStyle: 'none', p: 0, m: 0 }}>
@@ -48,4 +49,4 @@ export const ContactCard = () => {
       </Stack>
     </Card>
   );
-};
+});
