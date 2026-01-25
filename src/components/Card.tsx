@@ -20,9 +20,9 @@ export const Card = forwardRef<HTMLDivElement, CardProps>(({ children, href, sx,
       className={`cursor-target ${className ?? ''}`}
       sx={{
         bgcolor: darkslate[500],
-        borderRadius: 2,
+        borderRadius: 1,
         border: `1px solid ${darkslate[400]}`,
-        p: 3,
+        p: 2,
         height: '100%',
         position: 'relative',
         overflow: 'hidden',

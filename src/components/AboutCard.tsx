@@ -27,9 +27,6 @@ export const AboutCard = forwardRef<HTMLDivElement>((_, ref) => {
         </Typography>
 
         <Box>
-          <Typography variant="body2" sx={{ fontWeight: 300 }}>
-            My primary tools of choice include:
-          </Typography>
           <Box component="ul" sx={{ m: 0, mt: 1, pl: 2.5 }}>
             {skills.map((skill) => (
               <Box component="li" key={skill}>

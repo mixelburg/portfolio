@@ -25,7 +25,7 @@ const Page = () => {
       }}
     >
       <TargetCursor spinDuration={2} hideDefaultCursor parallaxOn hoverDuration={0.2} />
-      <Grid container spacing={{ xs: 1, sm: 2, md: 3 }}>
+      <Grid container spacing={{ xs: 1, sm: 2 }}>
         <Grid size={{ xs: 12, md: 6, lg: 9 }}>
           <Fade in timeout={500} style={{ transitionDelay: "100ms" }}>
             <IntroCard />

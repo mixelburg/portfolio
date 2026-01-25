@@ -37,6 +37,9 @@ export const theme = createTheme({
       light: primary[300],
       dark: primary[700],
     },
+    text: {
+      primary: darkslate[100]
+    }
   },
   typography: {
     fontFamily: '"JetBrains Mono", monospace',
