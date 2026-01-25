@@ -17,17 +17,17 @@ export const TimeCard = forwardRef<HTMLDivElement>((_, ref) => {
       // Israel time (IST/IDT)
       const israelTime = now.toLocaleTimeString('en-US', {
         timeZone: 'Asia/Jerusalem',
-        hour: 'numeric',
+        hour: '2-digit',
         minute: '2-digit',
-        hour12: true,
+        hour12: false,
       });
       setMyTime(israelTime);
 
       // Visitor time
       const visitorTimeStr = now.toLocaleTimeString('en-US', {
-        hour: 'numeric',
+        hour: '2-digit',
         minute: '2-digit',
-        hour12: true,
+        hour12: false,
       });
       setVisitorTime(visitorTimeStr);
 

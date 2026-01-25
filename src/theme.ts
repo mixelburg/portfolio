@@ -39,7 +39,7 @@ export const theme = createTheme({
     },
   },
   typography: {
-    fontFamily: '"Inter", sans-serif',
+    fontFamily: '"JetBrains Mono", monospace',
   },
   shape: {
     borderRadius: 12,
