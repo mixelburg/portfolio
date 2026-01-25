@@ -7,13 +7,11 @@ import { darkslate, primary } from '@/theme';
 
 type CardProps = {
   children: ReactNode;
-  colSpan?: number;
-  rowSpan?: number;
   href?: string;
   sx?: SxProps;
 };
 
-export const Card = ({ children, colSpan = 1, rowSpan = 1, href, sx }: CardProps) => {
+export const Card = ({ children, href, sx }: CardProps) => {
   const content = (
     <Box
       sx={{
@@ -27,15 +25,6 @@ export const Card = ({ children, colSpan = 1, rowSpan = 1, href, sx }: CardProps
         transition: 'border-color 0.3s ease, transform 0.3s ease',
         '&:hover': {
           borderColor: primary[500],
-        },
-        gridColumn: {
-          xs: 'span 1',
-          md: `span ${Math.min(colSpan, 2)}`,
-          lg: `span ${colSpan}`,
-        },
-        gridRow: {
-          xs: 'span 1',
-          md: `span ${rowSpan}`,
         },
         ...sx,
       }}

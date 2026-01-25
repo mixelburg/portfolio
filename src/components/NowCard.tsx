@@ -6,7 +6,7 @@ import { darkslate, primary } from '@/theme';
 
 export const NowCard = () => {
   return (
-    <Card colSpan={1} rowSpan={1} sx={{ p: 2 }}>
+    <Card sx={{ p: 2 }}>
       <Stack gap={1}>
         <Stack direction="row" justifyContent="space-between" alignItems="flex-start">
           <Stack direction="row" alignItems="center" gap={1}>

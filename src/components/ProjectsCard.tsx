@@ -7,11 +7,7 @@ import { primary } from '@/theme';
 
 export const ProjectsCard = () => {
   return (
-    <Card
-      colSpan={1}
-      rowSpan={1}
-      href="https://github.com/mixelburg?tab=repositories"
-    >
+    <Card href="https://github.com/mixelburg?tab=repositories">
       <Stack direction="row" justifyContent="space-between" alignItems="flex-start" height="100%">
         <Typography level="h4" fontWeight="bold" sx={{ m: 0 }}>
           Projects

@@ -8,7 +8,7 @@ import { darkslate, primary } from '@/theme';
 
 export const IntroCard = () => {
   return (
-    <Card colSpan={3} rowSpan={4}>
+    <Card>
       <Stack direction={{ xs: 'column', md: 'row' }} justifyContent="space-between" height="100%" gap={2}>
         <Stack justifyContent="space-between" height="100%" gap={2} flex={1}>
           <Stack>

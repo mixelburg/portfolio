@@ -6,7 +6,7 @@ import { darkslate } from '@/theme';
 
 export const ContactCard = () => {
   return (
-    <Card colSpan={1} rowSpan={4}>
+    <Card>
       <Stack height="100%" gap={2}>
         <Typography level="h4" fontWeight="bold">
           Let's start working together!

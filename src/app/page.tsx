@@ -1,4 +1,5 @@
 import { Box } from '@mui/joy';
+import Grid from '@mui/material/Grid';
 import { IntroCard } from '@/components/IntroCard';
 import { AboutCard } from '@/components/AboutCard';
 import { ContactCard } from '@/components/ContactCard';
@@ -18,31 +19,39 @@ const Page = () => {
         p: { xs: 1, sm: 2, md: 3 },
         width: '100%',
         maxWidth: '1200px',
-        display: 'grid',
-        gap: { xs: 1, sm: 2, md: 3 },
-        gridTemplateColumns: {
-          xs: '1fr',
-          md: 'repeat(2, 1fr)',
-          lg: 'repeat(4, 1fr)',
-        },
-        gridAutoRows: {
-          xs: 'auto',
-          lg: 'minmax(80px, auto)',
-        },
-        minHeight: { lg: '100vh' },
-        maxHeight: { lg: '800px' },
-        overflow: 'hidden',
       }}
     >
-      <IntroCard />
-      <AboutCard />
-      <ContactCard />
-      <TimeCard />
-      <ExperienceLinkCard />
-      <NowCard />
-      <ProjectsCard />
-      <SkillsCard />
-      <OpenSourceCard />
+      <Grid container spacing={{ xs: 1, sm: 2, md: 3 }}>
+        <Grid size={{ xs: 12, md: 6, lg: 9 }}>
+          <IntroCard />
+        </Grid>
+        <Grid size={{ xs: 12, md: 6, lg: 3 }}>
+          <AboutCard />
+        </Grid>
+
+        <Grid size={{ xs: 12, md: 6, lg: 3 }}>
+          <ContactCard />
+        </Grid>
+        <Grid size={{ xs: 12, md: 6, lg: 3 }}>
+          <TimeCard />
+        </Grid>
+        <Grid size={{ xs: 12, md: 6, lg: 3 }}>
+          <OpenSourceCard />
+        </Grid>
+
+        <Grid size={{ xs: 12, md: 6, lg: 3 }}>
+          <SkillsCard />
+        </Grid>
+        <Grid size={{ xs: 12, md: 6, lg: 3 }}>
+          <NowCard />
+        </Grid>
+        <Grid size={{ xs: 12, md: 6, lg: 3 }}>
+          <ProjectsCard />
+        </Grid>
+        <Grid size={{ xs: 12, md: 6, lg: 3 }}>
+          <ExperienceLinkCard />
+        </Grid>
+      </Grid>
     </Box>
   );
 };

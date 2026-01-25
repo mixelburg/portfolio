@@ -15,7 +15,7 @@ export const AboutCard = () => {
   ];
 
   return (
-    <Card colSpan={1} rowSpan={6}>
+    <Card>
       <Stack gap={2} height="100%">
         <Typography level="h4" fontWeight="bold" sx={{ m: 0 }}>
           About me

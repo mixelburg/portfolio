@@ -43,7 +43,7 @@ export const TimeCard = () => {
   }, []);
 
   return (
-    <Card colSpan={1} rowSpan={2}>
+    <Card>
       <Stack gap={2} justifyContent="center" height="100%">
         <Box>
           <Typography level="body-sm" sx={{ color: darkslate[300], m: 0 }}>

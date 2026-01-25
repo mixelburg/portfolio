@@ -9,7 +9,7 @@ import { primary } from '@/theme';
 export const ExperienceLinkCard = () => {
   return (
     <Link href="/experience" style={{ textDecoration: 'none', color: 'inherit', display: 'contents' }}>
-      <Card colSpan={1} rowSpan={1}>
+      <Card>
         <Stack direction="row" justifyContent="space-between" alignItems="flex-start" height="100%">
           <Typography level="h4" fontWeight="bold" sx={{ m: 0 }}>
             Experience
