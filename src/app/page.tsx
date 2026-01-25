@@ -1,6 +1,6 @@
 'use client';
 
-import { Box } from '@mui/material';
+import { Box, Stack } from '@mui/material';
 import Grid from '@mui/material/Grid';
 import { Fade } from '@mui/material';
 import { IntroCard } from '@/components/IntroCard';
@@ -42,35 +42,35 @@ const Page = () => {
           </Fade>
         </Grid>
         <Grid size={{ xs: 12, md: 6, lg: 3 }}>
-          <Fade in timeout={500} style={{ transitionDelay: '400ms' }}>
-            <TimeCard />
-          </Fade>
+          <Stack spacing={{ xs: 1, sm: 2, md: 3 }}>
+            <Fade in timeout={500} style={{ transitionDelay: '400ms' }}>
+              <TimeCard />
+            </Fade>
+            <Fade in timeout={500} style={{ transitionDelay: '500ms' }}>
+              <NowCard />
+            </Fade>
+          </Stack>
         </Grid>
         <Grid size={{ xs: 12, md: 6, lg: 3 }}>
-          <Fade in timeout={500} style={{ transitionDelay: '500ms' }}>
+          <Fade in timeout={500} style={{ transitionDelay: '600ms' }}>
             <OpenSourceCard />
           </Fade>
         </Grid>
 
         <Grid size={{ xs: 12, md: 6, lg: 3 }}>
-          <Fade in timeout={500} style={{ transitionDelay: '600ms' }}>
+          <Fade in timeout={500} style={{ transitionDelay: '700ms' }}>
             <SkillsCard />
           </Fade>
         </Grid>
         <Grid size={{ xs: 12, md: 6, lg: 3 }}>
-          <Fade in timeout={500} style={{ transitionDelay: '700ms' }}>
-            <NowCard />
-          </Fade>
-        </Grid>
-        <Grid size={{ xs: 12, md: 6, lg: 3 }}>
-          <Fade in timeout={500} style={{ transitionDelay: '800ms' }}>
-            <ProjectsCard />
-          </Fade>
-        </Grid>
-        <Grid size={{ xs: 12, md: 6, lg: 3 }}>
-          <Fade in timeout={500} style={{ transitionDelay: '900ms' }}>
-            <ExperienceLinkCard />
-          </Fade>
+          <Stack gap={{ xs: 1, sm: 2, md: 3 }}>
+            <Fade in timeout={500} style={{ transitionDelay: '800ms' }}>
+              <ProjectsCard />
+            </Fade>
+            <Fade in timeout={500} style={{ transitionDelay: '900ms' }}>
+              <ExperienceLinkCard />
+            </Fade>
+          </Stack>
         </Grid>
       </Grid>
     </Box>
