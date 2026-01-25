@@ -38,7 +38,7 @@ export const theme = createTheme({
       dark: primary[700],
     },
     text: {
-      primary: darkslate[100]
+    primary: darkslate[200]
     }
   },
   typography: {
