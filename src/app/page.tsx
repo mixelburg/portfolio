@@ -7,6 +7,7 @@ import { ExperienceLinkCard } from '@/components/ExperienceLinkCard';
 import { NowCard } from '@/components/NowCard';
 import { ProjectsCard } from '@/components/ProjectsCard';
 import { SkillsCard } from '@/components/SkillsCard';
+import { OpenSourceCard } from '@/components/OpenSourceCard';
 
 const Page = () => {
   return (
@@ -41,6 +42,7 @@ const Page = () => {
       <NowCard />
       <ProjectsCard />
       <SkillsCard />
+      <OpenSourceCard />
     </Box>
   );
 };
