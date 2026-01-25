@@ -14,13 +14,13 @@ export const IntroCard = forwardRef<HTMLDivElement>((_, ref) => {
         <Stack justifyContent="space-between" height="100%" gap={2} flex={1}>
           <Stack>
             <Typography
-              variant="body2"
+              variant="body1"
               sx={{ color: darkslate[300], m: 0 }}
             >
               welcome
             </Typography>
-            <Typography variant="body1" sx={{ mt: 1 }}>
-              Hi, I'm <Typography color="primary" component="span" fontWeight="bold">Ivan Kroha</Typography>, a full-stack software developer with a strong focus on building scalable applications, clean architecture, and great user experiences.
+            <Typography variant="h6" sx={{ mt: 1 }}>
+              Hi, I'm <Typography variant='h6' color="primary" component="span" fontWeight="bold">Ivan Kroha</Typography>, a full-stack software developer with a strong focus on building scalable applications, clean architecture, and great user experiences.
             </Typography>
             <Typography variant="body1" sx={{ mt: 2 }}>
               Feel free to reach out if you have any project in mind, want to collaborate, or just want to say hello.

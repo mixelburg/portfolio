@@ -64,14 +64,14 @@ const Page = () => {
           </Fade>
         </Grid>
         <Grid size={{ xs: 12, md: 6, lg: 3 }}>
-          <Stack gap={{ xs: 1, sm: 2, md: 3 }}>
             <Fade in timeout={500} style={{ transitionDelay: "800ms" }}>
               <ProjectsCard />
             </Fade>
-            <Fade in timeout={500} style={{ transitionDelay: "900ms" }}>
-              <ExperienceLinkCard />
-            </Fade>
-          </Stack>
+        </Grid>
+        <Grid size={{ xs: 12, md: 6, lg: 3 }}>
+          <Fade in timeout={500} style={{ transitionDelay: "900ms" }}>
+            <ExperienceLinkCard />
+          </Fade>
         </Grid>
       </Grid>
     </Box>
