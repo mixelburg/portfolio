@@ -4,6 +4,7 @@ import { Box, Fade, Stack } from "@mui/material";
 import Grid from "@mui/material/Grid";
 import { AboutCard } from "@/components/AboutCard";
 import { ContactCard } from "@/components/ContactCard";
+import { EthCard } from "@/components/EthCard";
 import { ExperienceLinkCard } from "@/components/ExperienceLinkCard";
 import { IntroCard } from "@/components/IntroCard";
 import { NowCard } from "@/components/NowCard";
@@ -57,20 +58,25 @@ const Page = () => {
             <OpenSourceCard />
           </Fade>
         </Grid>
+        <Grid size={{ xs: 12, md: 6, lg: 3 }}>
+          {/*<Fade in timeout={500} style={{ transitionDelay: "700ms" }}>*/}
+            <EthCard />
+          {/*</Fade>*/}
+        </Grid>
 
         <Grid size={{ xs: 12, md: 6, lg: 3 }}>
-          <Fade in timeout={500} style={{ transitionDelay: "700ms" }}>
-            <SkillsCard />
+          <Fade in timeout={500} style={{ transitionDelay: "800ms" }}>
+            <ProjectsCard />
           </Fade>
-        </Grid>
-        <Grid size={{ xs: 12, md: 6, lg: 3 }}>
-            <Fade in timeout={500} style={{ transitionDelay: "800ms" }}>
-              <ProjectsCard />
-            </Fade>
         </Grid>
         <Grid size={{ xs: 12, md: 6, lg: 3 }}>
           <Fade in timeout={500} style={{ transitionDelay: "900ms" }}>
             <ExperienceLinkCard />
+          </Fade>
+        </Grid>
+        <Grid size={{ xs: 12, md: 12, lg: 6 }}>
+          <Fade in timeout={500} style={{ transitionDelay: "1000ms" }}>
+            <SkillsCard />
           </Fade>
         </Grid>
       </Grid>
