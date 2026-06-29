@@ -9,6 +9,7 @@ export type ExperienceCardProps = {
   startDate: Date;
   endDate: Date;
   name: string;
+  title?: string;
   description: string;
   index: number;
 };
@@ -54,9 +55,16 @@ export const ExperienceCard = memo((props: ExperienceCardProps) => {
           alignItems={{ xs: 'flex-start', sm: 'center' }}
           gap={1}
         >
+        <Stack gap={0.5}>
           <Typography variant="h6" fontWeight="bold">
             {props.name}
           </Typography>
+          {props.title && (
+            <Typography variant="body2" sx={{ color: darkslate[300], fontStyle: 'italic' }}>
+              {props.title}
+            </Typography>
+          )}
+        </Stack>
           <Stack direction="row" gap={1} alignItems="center">
             <Typography variant="body2" sx={{ color: darkslate[300] }}>
               {formatDate(props.startDate)} - {isPresent ? 'Present' : formatDate(props.endDate)}
